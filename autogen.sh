@@ -6,7 +6,7 @@ else
   echo 0.7.5 > version # hard coded versions
 fi
 
-libtoolize
+glibtoolize
 aclocal
 autoconf
 automake --add-missing

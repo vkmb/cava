@@ -215,7 +215,7 @@ AC_CHECK_LIB(SDL2,SDL_Init, have_sdl=yes, have_sdl=no)
 AM_CONDITIONAL([SDL], [test "x$have_sdl" = "xyes"])
 
 dnl ######################
-dnl checking for ncursesw
+dnl checking for ncurses
 dnl ######################
 AC_ARG_ENABLE([output_ncurses],
   AS_HELP_STRING([--disable-output-ncurses],
@@ -223,12 +223,12 @@ AC_ARG_ENABLE([output_ncurses],
 )
 
 AS_IF([test "x$enable_output_ncurses" != "xno"], [
-  curses_config_bin="ncursesw6-config ncursesw5-config"
+  curses_config_bin="ncurses6-config ncurses5-config"
 
   AC_PATH_PROGS(CURSES_CONFIG, $curses_config_bin)
 
-  AC_CHECK_LIB(ncursesw, initscr,
-    curses_lib=ncursesw
+  AC_CHECK_LIB(ncurses, initscr,
+    curses_lib=ncurses
   )
 
   AC_CHECK_LIB($curses_lib, initscr,
@@ -244,7 +244,7 @@ AS_IF([test "x$enable_output_ncurses" != "xno"], [
     AC_CHECK_HEADERS([curses.h], , AC_MSG_ERROR([missing curses.h header]))
     have_ncurses=yes,
 
-    AC_MSG_NOTICE([WARNING: building without ncursesw support ncursesw is recomended!])
+    AC_MSG_NOTICE([WARNING: building without ncurses support ncurses is recomended!])
     have_ncurses=no
   )],
   [have_ncurses=no]
