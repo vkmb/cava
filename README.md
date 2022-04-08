@@ -127,14 +127,13 @@ Then install prerequisites:
 
     brew install fftw ncurses libtool automake portaudio
     
-Then fix macOS not finding libtool and ncursesw:
+For macos:
+  
+    git clone https://github.com/vkmb/cava
+    cd cava
+    git checkout macos
 
-    export LIBTOOL=`which glibtool`
-    export LIBTOOLIZE=`which glibtoolize`
-    ln -s `which glibtoolize` /usr/local/bin/libtoolize
-    ln -s /usr/lib/libncurses.dylib /usr/local/lib/libncursesw.dylib
-
-Tested on macOS Big Sur
+Tested on macOS Monterey 12.3.1
 
 
 #### Building
