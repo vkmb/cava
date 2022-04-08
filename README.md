@@ -140,7 +140,7 @@ Tested on macOS Monterey 12.3.1
  First of all clone this repo and cd in to it, then run:
  
     ./autogen.sh
-    ./configure
+    ./configure --disable-debug --disable-dependency-tracking --disable-silent-rules
     make
 
 If you have a recommended component installed, but do not wish to use it (perhaps if building a binary on one machine to be used on another), then the corresponding feature can be disabled during configuration (see configure --help for details).
